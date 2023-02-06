@@ -9,13 +9,14 @@ import androidx.compose.material.Button
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
-import androidx.compose.runtime.Composable
+import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.artspace.ui.theme.ArtSpaceTheme
+
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -36,8 +37,12 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun ArtSpaceScreen(){
     Column(
-        modifier = Modifier.padding(32.dp),
-        verticalArrangement = Arrangement.spacedBy(8.dp)
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(32.dp),
+        verticalArrangement = Arrangement.Center,
+        horizontalAlignment = Alignment.CenterHorizontally
+
     ) {
         Image(painter = painterResource(R.drawable.pencil), contentDescription = null)
 
@@ -53,13 +58,23 @@ fun ArtSpaceScreen(){
         }
 
         Spacer(modifier = Modifier.height(16.dp))
-        
+
         Row(
-            modifier = Modifier.fillMaxSize(),
-            horizontalArrangement = Arrangement.spacedBy(160.dp)
+            modifier = Modifier.fillMaxWidth(),
+            horizontalArrangement = Arrangement.SpaceBetween
         ) {
-            ButtonFunction("Previous")
-            ButtonFunction("Next")
+            Row(
+                //modifier = Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.Start
+            ) {
+                ButtonFunction("Previous")
+            }
+            Row(
+                //modifier = Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.End
+            ) {
+                ButtonFunction("Next")
+            }
         }
 
     }
@@ -67,7 +82,8 @@ fun ArtSpaceScreen(){
 @Composable
 fun ButtonFunction(buttonText: String) {
     Button(
-        onClick = { /*TODO*/ }
+        onClick = { /*TODO*/ },
+        modifier = Modifier.size(width=150.dp, height = 50.dp)
     ) {
         Text(text = buttonText)
     }
