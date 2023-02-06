@@ -1,7 +1,6 @@
 package com.example.artspace
 
 import android.os.Bundle
-import android.widget.Button
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.Image
@@ -41,6 +40,20 @@ fun ArtSpaceScreen(){
         verticalArrangement = Arrangement.spacedBy(8.dp)
     ) {
         Image(painter = painterResource(R.drawable.pencil), contentDescription = null)
+
+        Spacer(modifier = Modifier.height(16.dp))
+
+        Column(
+            modifier = Modifier.fillMaxWidth(),
+            horizontalAlignment = Alignment.CenterHorizontally
+        ) {
+            Text(text = "ArtWork Title")
+            Text(text = "Artwork Artist (Year)")
+            
+        }
+
+        Spacer(modifier = Modifier.height(16.dp))
+        
         Row(
             modifier = Modifier.fillMaxSize(),
             horizontalArrangement = Arrangement.spacedBy(160.dp)
@@ -53,7 +66,9 @@ fun ArtSpaceScreen(){
 }
 @Composable
 fun ButtonFunction(buttonText: String) {
-    Button(onClick = { /*TODO*/ }) {
+    Button(
+        onClick = { /*TODO*/ }
+    ) {
         Text(text = buttonText)
     }
 }
