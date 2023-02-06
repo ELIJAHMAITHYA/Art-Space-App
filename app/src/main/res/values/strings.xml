@@ -1,10 +1,17 @@
 <resources>
     <string name="app_name">Art Space</string>
 
-    <string name="title_1"></string>
+    <string name="title_1">Girl Face</string>
     <string name="title_2"></string>
     <string name="title_3"></string>
     <string name="title_4"></string>
     <string name="title_5"></string>
     <string name="title_6"></string>
+
+    <string name="artist_1">white-daemon</string>
+    <string name="artist_2"></string>
+    <string name="artist_3">Bingo designs</string>
+    <string name="artist_4"></string>
+    <string name="artist_5"></string>
+    <string name="artist_16"></string>
 </resources>

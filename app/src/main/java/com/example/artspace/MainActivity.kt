@@ -51,23 +51,28 @@ fun ArtSpaceScreen(){
     ) {
         when(next) {
             1 -> {
-               
+               ArtWorkAndDetail(
+                   painter = painterResource(R.drawable.girl_gd6fede4da_1920),
+                   contentDescription = null,
+                   title = R.string.title_1,
+                   artist = R.string.artist_1
+               )
             }
             2 -> {
-                Image(painter = painterResource(R.drawable.girl_gd6fede4da_1920), contentDescription = null)
-
-                Spacer(modifier = Modifier.height(16.dp))
-
-                Column(
-                    modifier = Modifier.fillMaxWidth(),
-                    horizontalAlignment = Alignment.CenterHorizontally
-                ) {
-                    Text(text = "ArtWork Title")
-                    Text(text = "Artwork Artist (Year)")
-
-                }
-
-                Spacer(modifier = Modifier.height(16.dp))
+                ArtWorkAndDetail(
+                    painter = painterResource(R.drawable.pencil),
+                    contentDescription = null,
+                    title = R.string.title_2,
+                    artist = R.string.artist_2
+                )
+            }
+            3 -> {
+                ArtWorkAndDetail(
+                    painter = painterResource(R.drawable.flowers),
+                    contentDescription = null,
+                    title = R.string.title_3,
+                    artist = R.string.artist_3
+                )
             }
         }
 
@@ -104,7 +109,7 @@ fun ArtSpaceScreen(){
 @Composable
 fun ArtWorkAndDetail(
     painter: Painter,
-    contentDescription: String,
+    contentDescription: String?,
     @StringRes title: Int,
     @StringRes artist: Int,
 ){
