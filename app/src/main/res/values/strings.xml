@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">Art Space</string>
+
+    <string name="title_1"></string>
+    <string name="title_2"></string>
+    <string name="title_3"></string>
+    <string name="title_4"></string>
+    <string name="title_5"></string>
+    <string name="title_6"></string>
 </resources>
