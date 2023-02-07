@@ -155,7 +155,12 @@ fun ArtSpaceScreen(){
             ) {
                 ButtonFunction(
                     "Next",
-                    onClick = { nextOrPrevious++ }
+                    onClick = {
+                        nextOrPrevious++
+                        if(nextOrPrevious > 10) {
+                            nextOrPrevious = 1
+                        }
+                    }
                 )
             }
         }
