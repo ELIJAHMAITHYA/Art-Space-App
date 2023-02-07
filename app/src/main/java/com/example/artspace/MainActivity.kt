@@ -39,7 +39,7 @@ class MainActivity : ComponentActivity() {
 }
 @Composable
 fun ArtSpaceScreen(){
-    var next by remember { mutableStateOf(1) }
+    var nextOrPrevious by remember { mutableStateOf(1) }
     //var previous by remember { mutableStateOf(0) }
     Column(
         modifier = Modifier
@@ -49,7 +49,7 @@ fun ArtSpaceScreen(){
         horizontalAlignment = Alignment.CenterHorizontally
 
     ) {
-        when(next) {
+        when(nextOrPrevious) {
             1 -> {
                ArtWorkAndDetail(
                    painter = painterResource(R.drawable.girl_gd6fede4da_1920),
@@ -60,7 +60,7 @@ fun ArtSpaceScreen(){
             }
             2 -> {
                 ArtWorkAndDetail(
-                    painter = painterResource(R.drawable.pencil),
+                    painter = painterResource(R.drawable.bicycle_ga6e03c665_1920),
                     contentDescription = null,
                     title = R.string.title_2,
                     artist = R.string.artist_2
@@ -68,10 +68,66 @@ fun ArtSpaceScreen(){
             }
             3 -> {
                 ArtWorkAndDetail(
-                    painter = painterResource(R.drawable.flowers),
+                    painter = painterResource(R.drawable.burkina_faso_g568b0c73b_1280),
                     contentDescription = null,
                     title = R.string.title_3,
                     artist = R.string.artist_3
+                )
+            }
+            4 -> {
+                ArtWorkAndDetail(
+                    painter = painterResource(R.drawable.security_gb7194eb70_1920),
+                    contentDescription = null,
+                    title = R.string.title_4,
+                    artist = R.string.artist_4
+                )
+            }
+            5 -> {
+                ArtWorkAndDetail(
+                    painter = painterResource(R.drawable.easter_g74b67ef05_1920),
+                    contentDescription = null,
+                    title = R.string.title_5,
+                    artist = R.string.artist_5
+                )
+            }
+            6 -> {
+                ArtWorkAndDetail(
+                    painter = painterResource(R.drawable.burkina_faso_g6668fc364_1920),
+                    contentDescription = null,
+                    title = R.string.title_6,
+                    artist = R.string.artist_6
+                )
+            }
+            7 -> {
+                ArtWorkAndDetail(
+                    painter = painterResource(R.drawable.breast_g96242091e_1920),
+                    contentDescription = null,
+                    title = R.string.title_7,
+                    artist = R.string.artist_7
+                )
+            }
+            8 -> {
+                ArtWorkAndDetail(
+                    painter = painterResource(R.drawable.fantastic_g1b412d05b_1920),
+                    contentDescription = null,
+                    title = R.string.title_8,
+                    artist = R.string.artist_8
+                )
+            }
+            9 -> {
+                ArtWorkAndDetail(
+                    painter = painterResource(R.drawable.universe_g801b7a225_1920),
+                    contentDescription = null,
+                    title = R.string.title_9,
+                    artist = R.string.artist_9
+                )
+            }
+            10 -> {
+                ArtWorkAndDetail(
+                    painter = painterResource(R.drawable.fantasy_ga0ec85667_1920),
+                    contentDescription = null,
+                    title = R.string.title_10,
+                    artist = R.string.artist_10
                 )
             }
         }
@@ -87,9 +143,9 @@ fun ArtSpaceScreen(){
                 ButtonFunction(
                     "Previous",
                     onClick = {
-                        next--
-                        if(next < 1) {
-                            next = 1
+                        nextOrPrevious--
+                        if(nextOrPrevious < 1) {
+                            nextOrPrevious = 1
                         }
                     }
                 )
@@ -99,7 +155,7 @@ fun ArtSpaceScreen(){
             ) {
                 ButtonFunction(
                     "Next",
-                    onClick = { next++ }
+                    onClick = { nextOrPrevious++ }
                 )
             }
         }
