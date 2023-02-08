@@ -5,7 +5,9 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.annotation.StringRes
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Button
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
@@ -13,6 +15,7 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
@@ -174,7 +177,15 @@ fun ArtWorkAndDetail(
     @StringRes title: Int,
     @StringRes artist: Int,
 ){
-    Image(painter = painter, contentDescription = contentDescription)
+    Image(
+        painter = painter,
+        contentDescription = contentDescription,
+        modifier = Modifier
+                    .border(3.dp, Color.DarkGray)
+                    .padding(20.dp)
+    )
+
+
 
     Spacer(modifier = Modifier.height(16.dp))
 
@@ -196,6 +207,7 @@ fun ButtonFunction(
     ) {
     Button(
         onClick = onClick,
+        shape = RoundedCornerShape(50.dp),
         modifier = Modifier.size(width=150.dp, height = 50.dp)
     ) {
         Text(text = buttonText)
