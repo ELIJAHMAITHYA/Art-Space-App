@@ -5,4 +5,4 @@ A Jetpack Compose training challenge from Google Developers, creating an Art gal
 <img src="https://github.com/AbdoulayeSedego/ArtSpace/blob/main/ArtWork%20Wireframe.jpeg" width=200 /> <br>
 
 #Design
-<img src"https://github.com/AbdoulayeSedego/ArtSpace/blob/main/ArtWork.png" width=200 />
+<img src="https://github.com/AbdoulayeSedego/ArtSpace/blob/main/ArtWork.png" width=200 />
